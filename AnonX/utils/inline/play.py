@@ -28,17 +28,17 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     x, y = str(round(played_sec/total_sec,1)).split(".")
     pos = int(y)
 
-    line = "—"
-    circle = "◉"
+    line = "▬"
+    circle = "▭"
 
     bar = line*(pos-1)
     bar += circle
-    bar += line*(10-len(bar))
+    bar += circle*(9-len(bar))
 
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} ▬{bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
@@ -59,18 +59,20 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="✯ ᴍᴇɴᴜ ✯",
-                callback_data=f"PanelMarkup {videoid}|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url=f"{config.SUPPORT_GROUP}"
-            )
+                text="🌹𝐀𝐃𝐃🔥𝐌𝐄🙈𝐁𝐀𝐁𝐘🌹",
+                url=f"https://t.me/TG_MANAGER_ROBOT?startgroup=true")
         ],
         [
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
-            )
+                text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                url=f"https://t.me/THE_VIP_BOY")
         ],
+        [        
+            InlineKeyboardButton(
+                text="🧑🏻‍💻 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 📡",
+                url=f"https://t.me/VIP_DUNIA")
+        ],
+        
     ]
     return buttons
 
@@ -82,17 +84,17 @@ def telegram_markup_timer(_, chat_id, played, dur):
     x, y = str(round(played_sec/total_sec,1)).split(".")
     pos = int(y)
 
-    line = "—"
-    circle = "◉"
+    line = "▬"
+    circle = "▭"
 
     bar = line*(pos-1)
     bar += circle
-    bar += line*(10-len(bar))
+    bar += circle*(9-len(bar))
     
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
@@ -113,8 +115,23 @@ def telegram_markup_timer(_, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup None|{chat_id}",
+                text="🌹𝐀𝐃𝐃🔥𝐌𝐄🙈𝐁𝐀𝐁𝐘🌹",
+                url=f"https://t.me/TG_MANAGER_ROBOT?startgroup=true")
+        ],
+        [
+            InlineKeyboardButton(
+                text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                url=f"https://t.me/THE_VIP_BOY")
+        ],
+        [        
+            InlineKeyboardButton(
+                text="🧑🏻‍💻 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 📡",
+                url=f"https://t.me/VIP_DUNIA")
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴍᴇɴᴜ ✯",
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"], callback_data="close"
@@ -275,6 +292,11 @@ def slider_markup(
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
+        [
+            InlineKeyboardButton(
+                text="🌹𝐀𝐃𝐃🔥𝐌𝐄🙈𝐁𝐀𝐁𝐘🌹",
+                url=f"https://t.me/TG_MANAGER_ROBOT?startgroup=true")
+        ],
     ]
     return buttons
 
@@ -301,28 +323,14 @@ def panel_markup_1(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
-            ),
-            InlineKeyboardButton(
-                text=_["S_B_3"],
-                url=f"{config.SUPPORT_GROUP}",
-            ),
+                text="🥀 𝐎𝐰𝐧𝐞𝐫'𝐱𝐃 🕊️",
+                url=f"https://t.me/THE_VIP_BOY")
         ],
-        [
+        [        
             InlineKeyboardButton(
-                text="⇆ sʜᴜғғʟᴇ ⇆",
-                callback_data=f"ADMIN Shuffle|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="↻ ʟᴏᴏᴩ ↻", callback_data=f"ADMIN Loop|{chat_id}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="↻ ʙᴀᴄᴋ ↻",
-                callback_data=f"MainMarkup {videoid}|{chat_id}",
-            ),
+                text="🧑🏻‍💻 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 📡",
+                url=f"https://t.me/VIP_DUNIA")
+                   
         ],
     ]
     return buttons
